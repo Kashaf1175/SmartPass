@@ -7,7 +7,7 @@ const API = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 5000,
+  timeout: 30000,
 })
 
 // Add error interceptor to catch network errors
