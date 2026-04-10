@@ -10,6 +10,7 @@ sys.path.insert(0, os.path.join(current_dir, 'app'))
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 import uvicorn
 
 # Import our modules directly
@@ -26,7 +27,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
-    allow_origin_regex=r"https?://(localhost|127\.0\.0\.1)(:\d+)?$",
+    allow_origin_regex=r"https?://(localhost|127\.0\.0\.1)(:\d+)?$|https://.*\.vercel\.app$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
