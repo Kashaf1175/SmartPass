@@ -1,10 +1,6 @@
-import os
 from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
-
-# MongoDB connection
-MONGODB_URL = os.getenv("MONGODB_URL", "mongodb://localhost:27017")
-DATABASE_NAME = os.getenv("DATABASE_NAME", "smartpass")
+from .config import MONGODB_URL, DATABASE_NAME
 
 try:
     client = MongoClient(MONGODB_URL, serverSelectionTimeoutMS=5000)
